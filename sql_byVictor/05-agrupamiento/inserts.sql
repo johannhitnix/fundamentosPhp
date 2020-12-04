@@ -3,6 +3,9 @@ INSERT INTO categorias VALUES(null, 'Acción');
 INSERT INTO categorias VALUES(null, 'Rol');
 INSERT INTO categorias VALUES(null, 'Deportes');
 
+INSERT INTO categorias VALUES(null, 'MetroidVania');
+INSERT INTO categorias VALUES(null, 'Plataformero');
+
 #INSERTS PARA ENTRADAS#
 INSERT INTO entradas VALUES(null, 1, 1, 'Novedades de GTA 5 Online', 'Review del GTA 5', CURDATE());
 INSERT INTO entradas VALUES(null, 1, 2, 'REVIEW de LOL Online', 'Todo sobre el LOL', CURDATE());
@@ -15,3 +18,5 @@ INSERT INTO entradas VALUES(null, 2, 3, 'Nuevos jugadores de PES 19', 'Review de
 INSERT INTO entradas VALUES(null, 3, 1, 'Novedades de Call Of Duty Online', 'Review del COD', CURDATE());
 INSERT INTO entradas VALUES(null, 3, 1, 'REVIEW de Fortnite Online', 'Todo sobre el Fortnite', CURDATE());
 INSERT INTO entradas VALUES(null, 3, 3, 'Nuevos jugadores de Formula 1 2k20', 'Review del Formula 1', CURDATE());
+
+INSERT INTO entradas VALUES(null, 1, 2, 'Playing SQL', 'SQL', CURDATE());
