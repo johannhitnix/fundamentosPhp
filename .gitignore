@@ -2,9 +2,11 @@
 *.jpeg
 *.gif
 *.png
+*.pdf
 *.doc
 *.docx
 *.zip
 *.xls
 *.xlsx
 *.csv
+material/
