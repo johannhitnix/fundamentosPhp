@@ -1,84 +1,44 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test-Shirt Store</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
-</head>
-<body>
-    <div id="container">
-        <!-- HEADER -->
-        <header id="header">  
-            <div id="logo">
-                <img src="assets/img/camiseta.png" alt="Camiseta_logo">
-                <a href="index.php">Test-Shirt Store</a> 
-            </div>
-        </header>
-    
-        <!-- MENU -->
-        <nav id="menu">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Categoria-1</a></li>
-                <li><a href="#">Categoria-2</a></li>
-                <li><a href="#">Categoria-3</a></li>
-                <li><a href="#">Categoria-4</a></li>
-                <li><a href="#">Categoria-5</a></li>
-            </ul>
-        </nav>
-    
-        <div id="content">
-            <!-- BARRA LATERAL -->
-            <aside id="lateral">
-                <div id="login" class="block_aside">
-                    <h3>Entrar a la web</h3>
-                    <form action="#" method="POST">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
-                        <label for="password">password</label>
-                        <input type="password" name="password" id="password">
-                        <input type="submit" value="Enviar">
-                    </form>
+<!-- <h1>Index del Proyecto MVC :<span style="color:red;">)</span></h1> -->
+<?php
+session_start();
+require_once 'autoload.php';
+require_once 'config/db.php';
+require_once 'helpers/utils.php';
+require_once 'config/parameters.php';
+require_once 'views/layout/header.php';
+require_once 'views/layout/sidebar.php';
 
-                    <ul>
-                        <li><a href="#">Mis Pedidos</a></li>
-                        <li><a href="#">Gestionar Pedidos</a></li>
-                        <li><a href="#">Gestionar Categorias</a></li>
-                    </ul>                    
-                </div>
-            </aside>
+function show_error($text){
+    $error = new ErrorController();
+    $error->index($text);
+}
+
+if(isset($_GET['controller'])) {
+    $ctrl_name = $_GET['controller'].'Controller';    
+}elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
+    $ctrl_name = default_controller;
+}else{
+    // echo "sorry la pagina que buscas no existe";
+    show_error("sorry la pagina que buscas no existe");
+}
+
+if (class_exists($ctrl_name)) {    
+    $controlador = new $ctrl_name();
     
-            <!-- CONTENIDO CENTRAL -->
-            <div id="central">
-                <h1>Productos Destacados</h1>
-                <div class="product">
-                    <img src="assets/img/camiseta.png" alt="product1">
-                    <h2>Camiseta Azul Ancha</h2>
-                    <p>$90.000</p>
-                    <a href="#" class="button">Comprar</a>
-                </div>
-                <div class="product">
-                    <img src="assets/img/camiseta.png" alt="product1">
-                    <h2>Camiseta Azul Ancha</h2>
-                    <p>$90.000</p>
-                    <a href="#" class="button">Comprar</a>
-                </div>
-                <div class="product">
-                    <img src="assets/img/camiseta.png" alt="product1">
-                    <h2>Camiseta Azul Ancha</h2>
-                    <p>$90.000</p>
-                    <a href="#" class="button">Comprar</a>
-                </div>
-            </div>
-        </div>
-    
-        <!-- FOOTER -->
-        <footer id="footer">
-            <!-- <p>Desarrolado por Belicos&copy; <?=date('Y');?></p> -->
-            <p>Desarrolado por Milo&copy; <?=date('Y');?></p>
-        </footer>
-    </div>
-</body>
-</html>
+    if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
+        $action = $_GET['action'];
+        $controlador->$action();
+    }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
+        $default_action = default_action;
+        $controlador->$default_action();
+    }
+    else{
+        // echo "sorry el metodo que buscas no existe";
+        show_error("sorry el metodo que buscas no existe");
+    }
+}else{
+    // echo "sorry la clase que buscas no existe";
+    show_error("sorry la clase que buscas no existe");
+}
+
+require_once 'views/layout/footer.php';

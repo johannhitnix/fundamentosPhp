@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+# Activar rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/masterPhp/proyectoMVC/error/
+
+# NO se va a poder cargar un archivo o un directorio cualquiera de la url, que las url no las saque si es un file o un directorio
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# "reescribeme esto a un solo formato" 
+# por aqui lo que haya en 1 y aqui lo que haya en 2
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</IfModule>
