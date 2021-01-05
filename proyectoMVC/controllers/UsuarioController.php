@@ -16,8 +16,37 @@ class UsuarioController{
             $password = isset($_POST['password']) ? $_POST['password'] : false;
 
             // TODO: adaptar la validacion compleja del proyecto anterior en este
-            
-            if ($nombre && $apellidos && $email && $password) {
+            $errors = Array();
+            // validacion nombre
+            if(!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)){
+                $val_nombre = true;
+            }else{
+                $val_nombre = false;
+                $errors['nombre'] = "nombre no válido";
+            }
+            // validacion apellidos
+            if(!empty($apellidos) && !is_numeric($apellidos) && !preg_match("/[0-9]/", $apellidos)){
+                $val_apellidos = true;
+            }else{
+                $val_apellidos = false;
+                $errors['apellidos'] = "apellidos no válidos";
+            }
+            // validacion email
+            if(!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $val_email = true;
+            }else{
+                $val_email = false;
+                $errors['email'] = "email no válido";
+            }
+            // validacion password
+            if(!empty($password)){
+                $val_password = true;
+            }else{
+                $val_password = false;
+                $errors['password'] = "no hay password!";
+            }
+
+            if (count($errors) == 0) {
                 $usuario = new Usuario();
                 $usuario->setNombre($nombre);
                 $usuario->setApellidos($apellidos);
@@ -32,7 +61,8 @@ class UsuarioController{
                     $_SESSION['register'] = "failed";
                 }    
             }else{
-                $_SESSION['register'] = "failed";
+                // $_SESSION['register'] = "failed";
+                $_SESSION['errors'] = $errors;
             }
         }else{
             $_SESSION['register'] = "failed";

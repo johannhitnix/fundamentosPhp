@@ -10,5 +10,5 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # "reescribeme esto a un solo formato" 
 # por aqui lo que haya en 1 y aqui lo que haya en 2
 RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
-
+# http://localhost/masterPhp/proyectoMVC/usuario/registro
 </IfModule>
