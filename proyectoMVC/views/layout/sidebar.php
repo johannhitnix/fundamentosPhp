@@ -17,12 +17,14 @@
         <ul>
             <?php if(isset($_SESSION['admin'])) { ?>
                 <li><a href="#">Gestionar Pedidos</a></li>
-                <li><a href="#">Gestionar Categorias</a></li>
+                <li><a href="<?=base_url?>categoria/index">Gestionar Categorias</a></li>
             <?php } ?>
 
             <?php if(isset($_SESSION['identity'])) { ?>
                 <li><a href="#">Mis Pedidos</a></li>
-                <li><a href="<?=base_url?>/usuario/logout">Cerrar Sesión</a></li>                
+                <li><a href="<?=base_url?>usuario/logout">Cerrar Sesión</a></li>                
+            <?php }else{ ?>
+                <li><a href="<?=base_url?>usuario/registro">Registrate aquí</a></li>                
             <?php } ?>
         </ul>                    
     </div>
