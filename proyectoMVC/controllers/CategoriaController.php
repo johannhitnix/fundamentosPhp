@@ -12,12 +12,11 @@ class CategoriaController{
         require_once 'views/categoria/crear.php';
     }
     public function save(){
-        echo "llegó aquí <br>";
-        var_dump($_POST);
-
         Utils::isAdmin();
         
         if(isset($_POST) && isset($_POST['nombre'])){
+            var_dump($_POST);
+            die();
             $categoria = new Categoria();
             $categoria->setNombre($_POST['nombre']);
             $categoria->save();

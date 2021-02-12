@@ -21,6 +21,10 @@ td{
     padding: 2px;
 }
 
+.thumb{
+    width: 100px;
+}
+
 .green-label{    
     color: #00ff00;
 }
@@ -155,11 +159,16 @@ td{
 }
 
 /* FORMS */
+.form-container{
+    width: 50%;
+}
+
 label,
 input[type="text"],
 input[type="password"],
-input[type=email],
-select{
+input[type="email"],
+input[type="number"],
+select, textarea{
     display: block;
     width: 95%;
     margin-top: 2px;
@@ -169,8 +178,9 @@ select{
 
 input[type="text"],
 input[type="password"],
-input[type=email],
-select{
+input[type="email"],
+input[type="number"],
+select, textarea{
     border: 1px solid #C9C9C9;
     box-shadow: 0px 0px 2px #ccc inset;
     background: white;
@@ -217,7 +227,14 @@ button, .button{
     text-align: center;
     margin-bottom: 20px;
 }
-
+.button-gestion{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.button-red{
+    background: red;
+    border: 1px solid #CF1717;
+}
 
 
 /* CENTRAL */
