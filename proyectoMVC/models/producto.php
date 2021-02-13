@@ -203,6 +203,13 @@ class Producto{
         $productos = $this->db->query("SELECT * FROM productos ORDER BY nombre");
         return $productos;
     }
+    public function getAllByCategory(){
+        $query = "SELECT p.*, c.nombre AS cat_nombre FROM productos p INNER JOIN categorias c
+                    ON p.categoria_id = c.id
+                    WHERE p.categoria_id = {$this->getCategoria_id()} ORDER BY nombre";
+        $productos = $this->db->query($query);
+        return $productos;
+    }
     public function getOne(){
         $producto = $this->db->query("SELECT * FROM productos WHERE id = {$this->getId()}");
         return $producto->fetch_object();

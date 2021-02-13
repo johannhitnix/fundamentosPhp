@@ -13,7 +13,7 @@
         <header id="header">  
             <div id="logo">
                 <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta_logo">
-                <a href="index.php">Test-Shirt Store</a> 
+                <a href="<?=base_url?>">Test-Shirt Store</a> 
             </div>
         </header>
     
@@ -21,9 +21,9 @@
         <?php $cats = Utils::showCategorias(); ?>
         <nav id="menu">
             <ul>
-                <li><a href="#">Inicio</a></li>
+                <li><a href="<?=base_url?>">Inicio</a></li>
                 <?php while($cat = $cats->fetch_object()){ ?>
-                    <li><a href="#"><?=$cat->nombre?></a></li>
+                    <li><a href="<?=base_url?>categoria/ver&id=<?=$cat->id?>"><?=$cat->nombre?></a></li>
                 <?php } ?>
             </ul>
         </nav>
