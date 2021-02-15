@@ -10,7 +10,7 @@ class Usuario{
         echo "object created <br>";
     }
 
-    // comportamiento del objeto cuando se le imprima o trate como string
+    // comportamiento del objeto cuando se le imprima o trate como string como en la linea 24
     public function __toString(){
         return "Hola, {$this->nombre}, estas registrado con {$this->email}";
     }
@@ -23,6 +23,4 @@ class Usuario{
 $user = new Usuario();
 echo $user;
 echo "<br>";
-for ($i=0; $i < 201; $i++) { 
-    echo "$i <br>";
-}
+var_dump($user);

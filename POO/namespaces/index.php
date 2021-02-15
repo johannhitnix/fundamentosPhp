@@ -5,6 +5,7 @@ require_once 'autoload.php';
 
 // con esto evito tener que escribir la ruta completa cuando tenga que crear objetos
 // con esto se importan los namespaces
+// la carpeta se debe llamar igual que el namespace para no generar conflictos con el autoload
 use MisClases\Usuario, MisClases\Categoria, MisClases\Entrada;
 use PanelAdministrador\Usuario as UserAdmin;
 
@@ -49,7 +50,7 @@ class Principal{
 
 }
 
-
+// **OBJETO PRINCIPAL**
 $ppal = new Principal();
 // var_dump($ppal->usuario);
 $ppal->ctes();
@@ -58,8 +59,9 @@ $methods = get_class_methods($ppal);
 $search = array_search('set', $methods);
 var_dump($search);
 
-// objeto de otro paquete
+// **OBJETO DE OTRO PAQUETE**
 // Cannot use PanelAdministrador\Usuario as Usuario because the name is already in use
+// Por eso cuando existen clases que se llaman igual en distintos namespaces se tienen q crear alias lin(9)
 $user = new UserAdmin();
 var_dump($user);
 $user->ctes();
@@ -69,6 +71,7 @@ $user->ctes();
 // They allow for better organization by grouping classes that work together to perform a task
 // They allow the same name to be used for more than one class
 // organize the classes into different groups while also preventing the similar classes from being mixed up.
+// https://www.w3schools.com/php/php_namespaces.asp
 
 // METODOS PARA CLASES
 echo "<br>";

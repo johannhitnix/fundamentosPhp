@@ -18,5 +18,5 @@ $programmer->setAltura(1.67);
 
 var_dump($programmer);
 
-$tecnico = new TecnicoRedes();
+$tecnico = new TecnicoRedes('VHDL, CISCO', '7 años');
 var_dump($tecnico);

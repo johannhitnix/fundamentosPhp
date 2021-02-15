@@ -4,11 +4,13 @@ class Persona{
     private $nombre;
     private $edad;
     private $ciudad;
+    private $skills;
 
-    public function __construct($nombre, $edad, $ciudad){
+    public function __construct($nombre, $edad, $ciudad, $skills){
         $this->nombre = $nombre;
         $this->edad = $edad;
         $this->ciudad = $ciudad;
+        $this->skills = $skills;
     }
 
     // Method Persona::__call() must take exactly 2 arguments
@@ -31,7 +33,7 @@ class Persona{
     }
 }
 
-$persona = new Persona("pepe el mago", 38, "Lima");
+$persona = new Persona("pepe el mago", 38, "Lima", "Diseño y Arqitectura");
 echo $persona->getNombre();
 echo "<br>";
 echo $persona->getEdad();
@@ -41,3 +43,7 @@ echo "<br>";
 echo $persona->bububu();
 echo "<br>";
 echo $persona->getbububu();
+echo "<br>";
+echo $persona->getSkills();
+echo "<br>";
+echo $persona->getPadres();

@@ -71,11 +71,11 @@ class TecnicoRedes extends Informatico{
     public $auditarRedes;
     public $expRedes;
 
-    public function __construct(){
+    public function __construct($lenguajes, $exp){
         // Operador de Resolucion de Ambito: llama al constructor padre de manera estatica
-        parent::__construct();
+        parent::__construct($lenguajes, $exp);
         $this->auditarRedes = 'experto';
-        $this->experienciaRedes = 5;
+        $this->expRedes = 5;
     }
 
     public function auditoria(){
