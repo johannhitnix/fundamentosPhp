@@ -14,7 +14,7 @@ a, a:visited, a:hover{
 table{
     text-align: center;
     width: 100%;
-    border: 1px solid #555;
+    border-bottom: 1px solid #ccc;
 }
 td{
     border-top: 1px solid #ccc;
@@ -302,6 +302,11 @@ button, .button{
     width: 100%;
     float: left;    
 }
+.img-carritou{
+    height: 80px;
+    display: block;
+    margin: 10px auto;
+}
 .detail-product .data{    
     width: 50%;
     float: right;    
@@ -329,4 +334,21 @@ button, .button{
     color: white;
     background: #222222;
     border-top: 4px solid #01B1EA;
+}
+
+/* CARRITO */
+.total-carrito{
+    width: 450px;
+    float: right;
+}
+.total-carrito h3{
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+.button-pedido{
+    display: block;
+    width: 150px;
+    float: right;
+    text-align: center;
 }

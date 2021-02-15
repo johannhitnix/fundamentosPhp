@@ -1,0 +1,34 @@
+C:\wamp64\www\masterPhp\proyectoMVC\controllers\CarritoController.php:6:
+array (size=2)
+  0 => 
+    array (size=4)
+      'id_producto' => string '11' (length=2)
+      'precio' => string '80000.00' (length=8)
+      'unidades' => int 2
+      'producto' => 
+        object(stdClass)[1]
+          public 'id' => string '11' (length=2)
+          public 'categoria_id' => string '3' (length=1)
+          public 'nombre' => string 'camisa leñadora' (length=16)
+          public 'descripcion' => string 'camisa leñadora roja' (length=21)
+          public 'precio' => string '80000.00' (length=8)
+          public 'stock' => string '22' (length=2)
+          public 'oferta' => null
+          public 'fecha' => string '2021-01-17' (length=10)
+          public 'imagen' => string 'CAMISA-ROJA.jpg' (length=15)
+  1 => 
+    array (size=4)
+      'id_producto' => string '13' (length=2)
+      'precio' => string '29999.00' (length=8)
+      'unidades' => int 1
+      'producto' => 
+        object(stdClass)[2]
+          public 'id' => string '13' (length=2)
+          public 'categoria_id' => string '6' (length=1)
+          public 'nombre' => string 'Camiseta Escandalosos' (length=21)
+          public 'descripcion' => string 'camiseta con estampado de ositos de la serie' (length=44)
+          public 'precio' => string '29999.00' (length=8)
+          public 'stock' => string '100' (length=3)
+          public 'oferta' => null
+          public 'fecha' => string '2021-02-10' (length=10)
+          public 'imagen' => string 'escandalosos-camiseta.jpg' (length=25)
