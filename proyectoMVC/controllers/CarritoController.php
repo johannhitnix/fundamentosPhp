@@ -30,7 +30,7 @@ class CarritoController{
             $producto = $producto->getOne();
 
             if(is_object($producto)){
-                // añade elementos al array: esto hace la misma vaina que un array_push
+                // añade elementos al array: esto hace la misma vaina que un array_push con un [] extra
                 $_SESSION['carrito'][] = array(
                     "id_producto" => $producto->id,
                     "precio" => $producto->precio,

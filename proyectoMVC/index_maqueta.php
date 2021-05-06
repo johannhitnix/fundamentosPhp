@@ -1,5 +1,5 @@
 <!-- corte1 -->
-<!-- header.php -->
+<!-- proyectoMVC\views\layout\header.php -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +35,7 @@
 <!-- corte1 -->
 
 <!-- corte2 -->
-<!-- sidebar.php -->
+<!-- proyectoMVC\views\layout\sidebar.php -->
             <!-- BARRA LATERAL -->
             <aside id="lateral">
                 <div id="login" class="block_aside">
@@ -61,7 +61,7 @@
 <!-- corte2 --> 
 
 <!-- corte4 -->    
-<!-- destacados.php -->
+<!-- proyectoMVC\views\producto\destacados.php -->
                 <h1>Productos Destacados</h1>
                 <div class="product">
                     <img src="assets/img/camiseta.png" alt="product1">
@@ -84,7 +84,7 @@
 <!-- corte4 --> 
            
 <!-- corte3 -->
-<!-- footer.php -->
+<!-- proyectoMVC\views\layout\footer.php -->
             </div>
         </div>
     
