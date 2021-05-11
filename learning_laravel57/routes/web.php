@@ -15,6 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ***CONTROLLERS***
+
+Route::get('/movies/{page?}', 'MovieController@index');
+
+// set path's name
+Route::get('/details/{y?}', array(
+    'middleware' => 'testyear',
+    'uses' => 'MovieController@details',
+    'as'   => 'details.movie'
+));
+
+Route::get('/redirection', 'MovieController@redirection');
+
+Route::resource('user', 'UserController');
+
+
+// ***SAMPLES***
+
 Route::get('/mostrar-fecha', function(){
     $titulo = 'Uso de vista .blade llamada desde route con parametros';
     $date_params = 'Y-m-d h:i:sa';
@@ -50,4 +68,8 @@ Route::get('/movies-list', function(){
     return view('movies.list')
         ->with('title', $title)
         ->with('list', $list);
+});
+
+Route::get('/generic-page', function(){
+    return view('page');
 });
