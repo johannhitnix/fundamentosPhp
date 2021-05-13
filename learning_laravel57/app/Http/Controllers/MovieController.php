@@ -19,4 +19,13 @@ class MovieController extends Controller
     public function redirection(){
         return redirect()->action('MovieController@details');
     }
+    public function form(){
+        return view('movie.form');
+    }
+    public function receive(Request $request){
+        $name = $request->input('name');
+        $email = $request->input('email');
+
+        return "el nombre es: <strong>$name</strong> y el email es: <strong>$email</strong>";
+    }
 }

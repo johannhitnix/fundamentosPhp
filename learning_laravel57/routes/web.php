@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 // ***CONTROLLERS***
 
+// MovieController
 Route::get('/movies/{page?}', 'MovieController@index');
 
 // set path's name
@@ -27,9 +28,22 @@ Route::get('/details/{y?}', array(
 ));
 
 Route::get('/redirection', 'MovieController@redirection');
+Route::get('/form', 'MovieController@form');
+Route::post('/receive', 'MovieController@receive');
 
+// resource controller example
 Route::resource('user', 'UserController');
 
+// Fruit Routes, grouping with prefix ex: fruits/index
+Route::group(['prefix' => 'fruits'], function(){
+    Route::get('index', 'FruitController@index');
+    Route::get('detail/{id}', 'FruitController@detail');
+    Route::get('create', 'FruitController@create');
+    Route::post('save', 'FruitController@save');
+    Route::get('delete/{id}', 'FruitController@delete');
+    Route::get('update/{id}', 'FruitController@update');
+    Route::post('doUpdate', 'FruitController@doUpdate');
+});
 
 // ***SAMPLES***
 
