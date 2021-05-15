@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+// User Controller
+Route::get('configuration', 'UserController@config')->name('config');
+Route::post('user/update', 'UserController@update')->name('user.update');
