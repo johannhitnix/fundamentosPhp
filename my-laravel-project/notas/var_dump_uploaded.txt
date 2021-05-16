@@ -1,0 +1,9 @@
+C:\wamp64\www\masterPhp\my-laravel-project\app\Http\Controllers\UserController.php:15:
+object(Illuminate\Http\UploadedFile)[212]
+  private 'test' (Symfony\Component\HttpFoundation\File\UploadedFile) => boolean false
+  private 'originalName' (Symfony\Component\HttpFoundation\File\UploadedFile) => string 'descarga (1).jpg' (length=16)
+  private 'mimeType' (Symfony\Component\HttpFoundation\File\UploadedFile) => string 'image/jpeg' (length=10)
+  private 'error' (Symfony\Component\HttpFoundation\File\UploadedFile) => int 0
+  protected 'hashName' => null
+  private 'pathName' (SplFileInfo) => string 'C:\wamp64\tmp\php59C5.tmp' (length=25)
+  private 'fileName' (SplFileInfo) => string 'php59C5.tmp' (length=11)

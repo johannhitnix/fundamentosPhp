@@ -4,11 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if(session('msg'))
+            <div class="alert alert-success">
+                {{ session('msg') }}
+            </div>
+            @endif
             <div class="card">
                 <div class="card-header">User Configuration</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.update') }}">
+                    <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -62,6 +67,20 @@
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>                        
+
+                        <div class="form-group row">
+                            <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" name="image" value="{{ Auth::user()->image }}" required>
+
+                                @if ($errors->has('image'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('image') }}</strong>
                                     </span>
                                 @endif
                             </div>
