@@ -1,0 +1,15 @@
+form .avatar{
+    margin-bottom: 15px;    
+    width: 75px;    
+}
+.navbar .container-avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 900px;    
+    overflow: hidden; /* para que oculte lo q sobresale del circulo */
+    margin-left: 20px;
+}
+
+.navbar .container-avatar img{
+    height: 100%;
+}

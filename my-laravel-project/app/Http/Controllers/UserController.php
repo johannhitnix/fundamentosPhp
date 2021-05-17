@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -49,5 +50,9 @@ class UserController extends Controller
         $user->update();
         // el valor en with se llama como {{ session('msg') }} en la vista
         return redirect()->route('config')->with(['msg' => 'User successfully updated!']);
+    }
+    public function getImage($filename){
+        $file = Storage::disk('users')->get($filename);
+        return new Response($file, 200);
     }
 }
