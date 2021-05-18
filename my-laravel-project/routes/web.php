@@ -25,3 +25,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('configuration', 'UserController@config')->name('config');
 Route::post('user/update', 'UserController@update')->name('user.update');
 Route::get('user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
+
+// Image Controller
+Route::get('upload-image', 'ImageController@create')->name('image.upload');
+Route::post('image/save', 'ImageController@save')->name('image.save');
+Route::get('image/file/{filename}', 'ImageController@getImage')->name('image.file');
+Route::get('imagen/{id}', 'ImageController@detail')->name('image.detail');

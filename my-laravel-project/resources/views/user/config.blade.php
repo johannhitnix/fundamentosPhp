@@ -4,11 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @if(session('msg'))
-            <div class="alert alert-success">
-                {{ session('msg') }}
-            </div>
-            @endif
+            @include('includes.msg')
             <div class="card">
                 <div class="card-header">User Configuration</div>
 
