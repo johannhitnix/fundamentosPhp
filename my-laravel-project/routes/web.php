@@ -25,6 +25,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('configuration', 'UserController@config')->name('config');
 Route::post('user/update', 'UserController@update')->name('user.update');
 Route::get('user/avatar/{filename}', 'UserController@getImage')->name('user.avatar');
+Route::get('profile/{id}', 'UserController@profile')->name('profile');
 
 // Image Controller
 Route::get('upload-image', 'ImageController@create')->name('image.upload');

@@ -75,3 +75,26 @@ form .avatar{
     color: gray;
     font-size: 11px;
 }
+
+/* PROFILE */
+.profile-user{
+    height: 200px;
+    margin-bottom: 40px;
+}
+.profile-user .container-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 900px;
+    overflow: hidden;
+    /* si no se limpian los flotados este float:left arrastra todo lo que hay debajo hacia la derecha */
+    float: left;
+}
+.profile-user .container-avatar img{
+    /* si la imagen no es lo suficientemente alta aparece sesgada por eso hay q ponerle height */
+    height: 100%;
+}
+.profile-user .user-info{
+    float: left;
+    margin-left: 30px;
+    padding-top: 20px;
+}
