@@ -10,7 +10,7 @@ class Image extends Model
 
     // One to Many: una imagen puede tener muchos comentarios
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
     }
     // One to Many
     public function likes(){

@@ -31,3 +31,11 @@ Route::get('upload-image', 'ImageController@create')->name('image.upload');
 Route::post('image/save', 'ImageController@save')->name('image.save');
 Route::get('image/file/{filename}', 'ImageController@getImage')->name('image.file');
 Route::get('imagen/{id}', 'ImageController@detail')->name('image.detail');
+
+// Comment Controller
+Route::post('comment/save', 'CommentController@save')->name('comment.save');
+Route::get('comment/delete/{id}', 'CommentController@delete')->name('comment.delete');
+
+// Like Cotroller
+Route::get('like/{img}', 'LikeController@like')->name('like.save');
+Route::get('dislike/{img}', 'LikeController@dislike')->name('like.delete');

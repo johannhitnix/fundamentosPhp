@@ -33,8 +33,21 @@
                             <span class="nickname date">{{ ' | ' . \FormatTime::LongTimeFilter($img->created_at) }}</span>
                             <p>{{ $img->description }}</p>
                         </div>
-                        <div class="likes">
-                            <img src="{{ asset('img/heart-grey.png') }}">
+                        <div class="likes">                            
+                            <!-- check if the user liked it -->
+                            <?php $user_like = false; ?>
+                            @foreach($img->likes as $like)
+                                @if($like->user->id == Auth::user()->id)
+                                    <?php $user_like = true; ?>
+                                @endif
+                            @endforeach
+                            
+                            @if($user_like)
+                                <img src="{{ asset('img/heart-red.png') }}" class="btn-like">
+                            @else
+                                <img src="{{ asset('img/heart-grey.png') }}" class="btn-dislike">
+                            @endif
+                            <span class="number-likes">{{ count($img->likes) }}</span>
                         </div>
                         <div class="comments">
                             <a href="" class="btn btn-warning btn-sm btn-comments">Comments ({{ count($img->comments) }})</a>
