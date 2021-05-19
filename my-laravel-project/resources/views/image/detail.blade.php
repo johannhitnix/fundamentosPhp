@@ -46,6 +46,42 @@
                             @endif
                             <span class="number-likes">{{ count($img->likes) }}</span>
                         </div>
+                        @if(Auth::user() && Auth::user()->id == $img->user_id)
+                        <div class="actions">
+                            <a href="{{ route('image.edit', ['id' => $img->id]) }}" class="btn btn-sm btn-outline-primary">Update</a>
+                            
+                            <!-- Button to Open the Modal -->
+                            <button type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#myModal">
+                                Delete
+                            </button>
+
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Comfirmation</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        Are you sure you want to delete it?
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Skip</button>
+                                        <a href="{{ route('image.delete', ['id' => $img->id]) }}" class="btn btn-danger">Yes Delete it!</a>
+                                    </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                         <div class="clearfix"></div>
                         <div class="comments">
                             <h4>Comments ({{ count($img->comments) }})</h4>
