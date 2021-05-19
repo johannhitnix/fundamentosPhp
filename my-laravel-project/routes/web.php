@@ -39,3 +39,4 @@ Route::get('comment/delete/{id}', 'CommentController@delete')->name('comment.del
 // Like Cotroller
 Route::get('like/{img}', 'LikeController@like')->name('like.save');
 Route::get('dislike/{img}', 'LikeController@dislike')->name('like.delete');
+Route::get('liked', 'LikeController@index')->name('liked');

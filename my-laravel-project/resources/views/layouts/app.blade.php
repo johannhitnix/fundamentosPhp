@@ -55,6 +55,9 @@
                                 <a href="{{  route('home') }}" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ route('liked') }}" class="nav-link">Liked</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('image.upload') }}" class="nav-link">Upload image</a>
                             </li>
                             <li>
