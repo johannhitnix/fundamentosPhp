@@ -47,4 +47,9 @@ window.addEventListener('load', () => {
         })
     }
     dislike()
+
+    // BUSCADOR
+    $('#search_form').on('submit', function(){
+        $(this).attr('action', url+'people/'+$('#search').val())
+    })
 })
