@@ -1,0 +1,4 @@
+url:
+http://localhost/masterPhp/Symfony5.2/public/
+
+también hay que instalarle el apache-pack

@@ -1,0 +1,31 @@
+#1 crear proyecto en consola con comando:
+    composer create-project symfony/website-skeleton:"^4.4" Symfony4.4
+
+    * en este caso victor creo su proyecto fuera de la carpeta master-php, entonces el movio la carpeta parado en \www comando:
+        mv aprendiendo-symfony/ master-php/aprendiendo-symfony
+
+#2 hay que instalarle otra extension a Symfony para que pueda trabajar con apache y crear hosts virtuales:
+    * primero pararse en el proyecto Symfony4.4:
+        cd Symfony4.4/
+    * luego correr:
+        composer require symfony/apache-pack
+        
+        ERROR:
+        WARNING  symfony/apache-pack (>=1.0): From github.com/symfony/recipes-contrib:master
+        The recipe for this package comes from the "contrib" repository, which is open to community contributions.
+        Review the recipe at https://github.com/symfony/recipes-contrib/tree/master/symfony/apache-pack/1.0
+
+        SOLUCION:
+        #1 Remover el apache-pack:
+            composer remove symfony/apache-pack
+        #2 Ir a: Symfony4.4\composer.json
+        #3 Cambiar "allow-contrib" a true
+        #4 De nuevo agregar apache pack:
+            composer require symfony/apache-pack
+        y listo!
+
+url proyecto:
+http://localhost/masterPhp/Symfony4.4/public/
+
+vhost:
+http://symfony4.4.com.devel/
